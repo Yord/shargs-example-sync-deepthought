@@ -31,5 +31,11 @@
   "devDependencies": {
     "fast-check": "1.23.0",
     "jest": "25.1.0"
+  },
+  "dependencies": {
+    "shargs": "0.17.1",
+    "shargs-opts": "0.2.0",
+    "shargs-parser": "0.2.0",
+    "shargs-usage": "0.2.0"
   }
 }
