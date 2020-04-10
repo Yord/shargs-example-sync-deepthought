@@ -1,6 +1,6 @@
 {
   "name": "shargs-example-deepthought",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A sample application of shargs",
   "keywords": [
     "shargs",
@@ -27,9 +27,15 @@
   "engines": {
     "node": ">=8.3.0"
   },
-  "private": false,
+  "private": true,
   "devDependencies": {
     "fast-check": "1.23.0",
     "jest": "25.1.0"
+  },
+  "dependencies": {
+    "shargs": "0.17.1",
+    "shargs-opts": "0.2.0",
+    "shargs-parser": "0.2.0",
+    "shargs-usage": "0.2.0"
   }
 }
