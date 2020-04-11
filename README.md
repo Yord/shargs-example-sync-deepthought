@@ -34,11 +34,11 @@ const opts = [
   flag('help', ['-h', '--help'], {desc: 'Print this help message and exit.'})
 ]
 
-const deepThought = parser({
+const stages = {
   argv: [splitShortOptions],
   opts: [requireOptions, cast],
   args: [flagsAsBools]
-})
+}
 
 const docs = usage([
   synopsis('deepThought'),
@@ -58,7 +58,8 @@ const style = {
 
 const argv = process.argv.slice(2)
 
-const {args, errs} = deepThought(opts)(argv)
+const deepThought = parser(stages)(opts)
+const {args, errs} = deepThought(argv)
 
 const help = docs(opts)(style)
 
@@ -161,7 +162,7 @@ Please report issues [in the `shargs` tracker][issues]!
 
 ## License
 
-`shargs-integration-tests` is [MIT licensed][license].
+`shargs-example-deepthought` is [MIT licensed][license].
 
 
 
