@@ -22,7 +22,7 @@
     "url": "https://github.com/Yord/shargs-example-deepthought.git"
   },
   "scripts": {
-    "start": "./src/index.js"
+    "start": "node ./deepThought"
   },
   "engines": {
     "node": ">=8.3.0"
