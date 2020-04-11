@@ -35,14 +35,19 @@ const style = {
 
 const argv = process.argv.slice(2)
 
-const {args} = deepThought(opts)(argv)
+const {args, errs} = deepThought(opts)(argv)
 
 const help = docs(opts)(style)
 
 if (args.help) {
   console.log(help)
+  process.exit(0)
+} else if (errs.length > 0) {
+  errs.forEach(
+    ({code, msg, info}) => console.log(`${code}: ${msg}\n\nInfo: ${JSON.stringify(info, null, 2)}`)
+  )
+  process.exit(1)
 } else {
-  console.log('The answer is: ' + args.answer)
+  console.log(`The answer is: ${args.answer}\n\n${JSON.stringify(args, null, 2)}`)
+  process.exit(0)
 }
-
-console.log(args)
