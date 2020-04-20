@@ -1,6 +1,6 @@
 {
   "name": "shargs-example-deepthought",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A sample application of shargs",
   "keywords": [
     "shargs",
@@ -33,9 +33,9 @@
     "jest": "25.1.0"
   },
   "dependencies": {
-    "shargs": "0.17.1",
-    "shargs-opts": "0.2.0",
-    "shargs-parser": "0.2.0",
-    "shargs-usage": "0.2.0"
+    "shargs": "0.20.3",
+    "shargs-opts": "0.3.1",
+    "shargs-parser": "0.3.2",
+    "shargs-usage": "0.3.4"
   }
 }
