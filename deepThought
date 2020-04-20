@@ -83,13 +83,7 @@ if (args.ask && args.ask.help) {
 }
 
 if (errs.length > 0) {
-  errs.forEach(
-    ({code, msg, info}) => (
-      console.log(`${code}: ${msg}`),
-      console.log('Info: ' + JSON.stringify(info, null, 2))
-    )
-  )
-  console.log('Args: ' + JSON.stringify(args, null, 2))
+  errs.forEach(({code, msg}) => console.log(`${code}: ${msg}`))
   process.exit(1)
 }
 
