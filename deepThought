@@ -5,14 +5,14 @@ const {command, flag, number, string, stringPos} = require('shargs-opts')
 const {cast, flagsAsBools, requireOptions, restrictToOnly, reverseFlags, splitShortOptions, verifyRules} = require('shargs-parser')
 const {note, optsDef, optsLists, space, synopses, synopsis, usage} = require('shargs-usage')
 
-const formatMustBeJson = html => opts => (
+const rules = html => opts => (
   typeof html.values === 'undefined' ||
   opts.some(_ => _.key === 'format' && (typeof _.values === 'undefined' || _.values[0] === 'json'))
 )
 
 const askOpts = [
   string('format', ['--format'], {only: ['json', 'xml'], defaultValues: ['json'], desc: 'Respond either with json or xml.'}),
-  flag('html', ['--no-html'], {reverse: true, rules: formatMustBeJson, desc: 'Removes HTML tags from texts.'}),
+  flag('html', ['--no-html'], {reverse: true, rules, desc: 'Removes HTML tags.'}),
   flag('help', ['-h', '--help'], {desc: 'Print this help message and exit.'}),
   stringPos('question', {required: true, desc: 'State your question.'})
 ]
