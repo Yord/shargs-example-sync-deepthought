@@ -2,13 +2,8 @@
 
 const {parser} = require('shargs')
 const {command, flag, number, program, string, stringPos} = require('shargs-opts')
-const {cast, flagsAsBools, requireOptions, restrictToOnly, reverseFlags, splitShortOptions} = require('shargs-parser')
+const {cast, flagsAsBools, requireOptions, restrictToOnly, reverseFlags, splitShortOptions, verifyOpts} = require('shargs-parser')
 const {desc, optsDef, optsLists, space, synopses, synopsis, usage} = require('shargs-usage')
-
-const rules = html => opts => (
-  typeof html.values === 'undefined' ||
-  opts.some(_ => _.key === 'format' && (typeof _.values === 'undefined' || _.values[0] === 'json'))
-)
 
 const description = (
   'Deep Thought was created to come up with the Answer to ' +
@@ -17,7 +12,7 @@ const description = (
 
 const askOpts = [
   string('format', ['--format'], {only: ['json', 'xml'], defaultValues: ['json'], desc: 'Respond either with json or xml.'}),
-  flag('html', ['--no-html'], {reverse: true, rules, desc: 'Removes HTML tags.'}),
+  flag('html', ['--no-html'], {reverse: true, desc: 'Removes HTML tags.'}),
   flag('help', ['-h', '--help'], {desc: 'Print this help message and exit.'}),
   stringPos('question', {required: true, desc: 'State your question.'})
 ]
@@ -28,16 +23,21 @@ const opts = [
   flag('help', ['-h', '--help'], {desc: 'Print this help message and exit.'})
 ]
 
-const ask = program(askOpts)('deepThought ask', {desc: description})
+const ask = program('deepThought ask', askOpts, {desc: description})
 
-const deepThought = program(opts)('deepThought', {desc: description})
+const deepThought = program('deepThought', opts, {desc: description})
+
+const rules = opts => (
+  !opts.some(_ => _.key === 'html' && typeof _.values !== 'undefined') ||
+  opts.some(_ => _.key === 'format' && (typeof _.values === 'undefined' || _.values[0] === 'json'))
+)
 
 const checks = {
   opts: [requireOptions]
 }
 
 const askChecks = {
-  opts: [requireOptions]
+  opts: [requireOptions, verifyOpts(rules)]
 }
 
 const stages = {
