@@ -97,7 +97,7 @@ The answer is: 42
 }
 ```
 
-### Error Output if `ask` is not given
+### Error Output
 
 Providing no `ask` command:
 
