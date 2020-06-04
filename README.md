@@ -42,7 +42,7 @@ deepThought ask [--format] [--no-html] [-h|--help] (<question>)
 -h, --help               Print this help message and exit.                      
 ask                      Ask a question. [required]                             
     --format=<json|xml>  Respond either with json or xml. [default: json]       
-    --no-html            Removes HTML tags from texts.                          
+    --no-html            Removes HTML tags.                                     
     -h, --help           Print this help message and exit.                      
     <question>           State your question. [required]                        
                                                                                 
@@ -64,7 +64,7 @@ deepThought ask [--format] [--no-html] [-h|--help] (<question>)
 --format=<json|xml> [default: json]                                             
     Respond either with json or xml.                                            
 --no-html                                                                       
-    Removes HTML tags from texts.                                               
+    Removes HTML tags.                                                          
 -h, --help                                                                      
     Print this help message and exit.                                           
 <question> [required]                                                           
@@ -82,18 +82,18 @@ Providing `ask` with a question:
 $ ./deepThought ask "What is the meaning of life, the universe, and everything?"
 ```
 
-Prints the following answer and `args` object:
+Prints the following text to the console:
 
 ```bash
 The answer is: 42
 {
   "_": [],
-  "answer": 42,
   "ask": {
     "_": [],
-    "question": "What is the meaning of life, the universe, and everything?",
-    "format": "json"
-  }
+    "format": "json",
+    "question": "What is the meaning of life, the universe, and everything?"
+  },
+  "answer": 42
 }
 ```
 
@@ -108,7 +108,7 @@ $ ./deepThought --answer 23
 Prints the following error:
 
 ```bash
-Required option is missing: An option that is marked as required has not been provided.
+RequiredOptionMissing: An option that is marked as required has not been provided.
 ```
 
 Providing a wrong `--format`:
@@ -120,7 +120,8 @@ $ ./deepThought ask --format csv
 Prints the following error:
 
 ```bash
-Value restriction violated: A value lies outside the allowed values of an option.
+RequiredOptionMissing: An option that is marked as required has not been provided.
+ValueRestrictionsViolated: A value lies outside the allowed values of an option.
 ```
 
 ## Reporting Issues
