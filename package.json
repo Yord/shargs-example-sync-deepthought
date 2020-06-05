@@ -1,13 +1,13 @@
 {
-  "name": "shargs-example-deepthought",
-  "version": "0.5.0",
+  "name": "shargs-example-sync-deepthought",
+  "version": "0.5.1",
   "description": "A sample application of shargs",
   "keywords": [
     "shargs",
     "command-line",
     "parser"
   ],
-  "homepage": "https://github.com/Yord/shargs-example-deepthought",
+  "homepage": "https://github.com/Yord/shargs-example-sync-deepthought",
   "bugs": {
     "url": "https://github.com/Yord/shargs/issues"
   },
@@ -19,7 +19,7 @@
   "main": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Yord/shargs-example-deepthought.git"
+    "url": "https://github.com/Yord/shargs-example-sync-deepthought.git"
   },
   "scripts": {
     "start": "node ./deepThought"
