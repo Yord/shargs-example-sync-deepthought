@@ -1,4 +1,4 @@
-shargs-example-deepthought is a sample application of [shargs][shargs] 🦈.
+shargs-example-sync-deepthought is a sample application of [shargs][shargs] 🦈.
 
 See the [`shargs` github repository][shargs] for more details!
 
@@ -9,8 +9,8 @@ See the [`shargs` github repository][shargs] for more details!
 ## Setup
 
 ```bash
-$ git clone https://github.com/Yord/shargs-example-deepthought.git
-$ cd shargs-example-deepthought
+$ git clone https://github.com/Yord/shargs-example-sync-deepthought.git
+$ cd shargs-example-sync-deepthought
 $ npm i
 $ chmod +x ./deepThought
 ```
@@ -130,14 +130,14 @@ Please report issues [in the `shargs` tracker][issues]!
 
 ## License
 
-`shargs-example-deepthought` is [MIT licensed][license].
+`shargs-example-sync-deepthought` is [MIT licensed][license].
 
 
 
 [contribute]: https://github.com/Yord/shargs#contributing
-[deepThought]: https://github.com/Yord/shargs-example-deepthought/blob/master/deepThought
+[deepThought]: https://github.com/Yord/shargs-example-sync-deepthought/blob/master/deepThought
 [issues]: https://github.com/Yord/shargs/issues
-[license]: https://github.com/Yord/shargs-example-deepthought/blob/master/LICENSE
+[license]: https://github.com/Yord/shargs-example-sync-deepthought/blob/master/LICENSE
 [node]: https://nodejs.org/
 [shargs]: https://github.com/Yord/shargs
 [shield-license]: https://img.shields.io/badge/license-MIT-yellow.svg?labelColor=313A42
